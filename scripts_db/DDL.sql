@@ -1,0 +1,10 @@
+CREATE DATABASE python_sql;
+
+USE python_sql;
+
+CREATE TABLE Usuarios (
+	Id_usuario INT PRIMARY KEY IDENTITY,
+	Nome VARCHAR (200) NOT NULL,
+	Email VARCHAR (200) NOT NULL UNIQUE,
+	DataNascimento DATE NOT NULL
+);
