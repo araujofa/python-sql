@@ -1,22 +1,22 @@
 import pyodbc
 import pandas as pd
 
+
 # Insere dados da conexão com o banco de dados
 data_con = (
-    "Driver={SQL Server};"
-    "Server=DESKTOP-Q6OMQ27;"
-    "Database=python_sql;"
-)
+        "Driver={SQL Server};"
+        "Server=DESKTOP-Q6OMQ27;"
+        "Database=python_sql;"
+    )
 
 # Abre a conexão com o banco de dados passando como parametro os dados da conexão
-con = pyodbc.connect(data_con)
-if con:
+try:
+    con = pyodbc.connect(data_con)
     print('Conectado ao banco de dados!')
-else:
-    print('Algo deu errado com a conexão!')
+except:
+    raise ValueError('Não foi possivel se conectar ao banco de dados!')
 
 cursor = con.cursor()
-
 
 while True:
 
